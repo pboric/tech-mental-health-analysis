@@ -1,102 +1,49 @@
-# Mental Health in the Tech Industry Analysis
+# Mental Health in the Tech Industry
 
-## Introduction
+An SQL and pandas analysis of the OSMI mental health surveys of tech workers (2014 and 2016–2019): who takes part,
+how common mental health conditions and treatment are, and how openly mental health is discussed at work.
 
-This repository contains an analysis of mental health issues within the tech industry. The analysis is conducted using survey data, exploring various aspects such as gender disparities, treatment-seeking behavior, and the correlation between corporate employment and mental health diagnoses.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/pboric/tech-mental-health-analysis/blob/main/Mental_Health_in_the_Tech_Industry_v2.ipynb)
 
-## Notebook Information
+## Key findings
 
-- **Notebook Title:** Mental Health in the Tech Industry.ipynb
-- **Author:** Petar Krešimir Borić
-- **Original Location:** [Google Colab](https://colab.research.google.com/github/pboric/Project-4/blob/main/Mental_Health_in_the_Tech_Industry_SQL_v2.ipynb)
+- Participants are mostly men, but women in the survey report mental health conditions more often.
+- 57 % of participants have sought treatment from a mental health professional.
+- People working at large companies report diagnosed conditions somewhat more often, but the correlation analysis
+  finds no significant relationship between company type and diagnoses.
+- Many answers needed cleaning first (free-text gender and age values, inconsistent categories), which limits how
+  precise the results can be.
 
-## Table of Contents
+## What the notebook covers
 
-- Mental Health in the Tech Industry
+1. Loading the survey database with SQL queries (survey, question and answer tables)
+2. Participation by year and country, and the age and gender of participants, after cleaning
+3. Family history, diagnoses and treatment
+4. Workplace questions: mental health benefits, resources, and comfort discussing mental health with coworkers,
+   supervisors and in job interviews
+5. Interactive charts with Plotly
 
-- About Dataset
+## Repository
 
-- Importing the libraries and loading the database
+| File | Content |
+|---|---|
+| [`Mental_Health_in_the_Tech_Industry_v2.ipynb`](Mental_Health_in_the_Tech_Industry_v2.ipynb) | The full analysis (the interactive Plotly charts show on Colab or locally, not in GitHub's preview) |
+| `mental_health.sqlite` | The survey database |
 
-- Executing the query and load the result into a dataframe
+## Run it
 
-- Number of surveyed users
+```bash
+pip install -r requirements.txt
+jupyter notebook Mental_Health_in_the_Tech_Industry_v2.ipynb
+```
 
-- Survey questions
+Or open it in Colab with the badge above and upload `mental_health.sqlite`.
 
-- Cleaning the Age values and running a basic statistic analysis
+## Data
 
-- Cleaning the gender values and running basic statistics
+[Mental Health in the Tech Industry](https://www.kaggle.com/datasets/anth7310/mental-health-in-the-tech-industry) on
+Kaggle, based on the [Open Sourcing Mental Health (OSMI)](https://osmihelp.org/research) surveys.
 
-- Cleaning the mental family history values and running basic statistics
+## License
 
-- Statistics: Have you ever sought treatment for a mental health disorder from a mental health professional?
-
-- Cleaning and statistics: Does your employer provide mental health benefits as part of healthcare coverage?
-
-- Cleaning and statistics: Would you bring up a mental health issue with a potential employer in an interview?
-
-- Cleaning and statistics: Has your employer ever formally discussed mental health (for example, as part of a wellness campaign or other official communication)?
-
-- Cleaning and statistics: Does your employer offer resources to learn more about mental health disorders and options for seeking help?
-
-- Cleaning and statistics: Would you feel comfortable discussing a mental health issue with your coworkers?
-
-- Cleaning and statistics: Would you feel comfortable discussing a mental health issue with your direct supervisor(s)?
-
-- Cleaning and statistics: Have your previous employers provided mental health benefits?
-
-- Cleaning and statistics: Would you have been willing to discuss your mental health with your direct supervisor(s)?
-
-- Statistics: How willing would you be to share with friends and family that you have a mental illness?
-
-- Cleaning and statistics: Have your observations of how another individual who discussed a mental health disorder made you less likely to reveal a mental health 
-  issue yourself in your current workplace?
-
-- Cleaning and statistics: Have you had a mental health disorder in the past?
-
-- Statistics: Do you currently have a mental health disorder?
-
-- Cleaning and statistics: Do you believe your productivity is ever affected by a mental health issue?
-
-- Distribution of Mental Illness by Gender
-
-- Survey Participation by Country
-
-- Corporate Employment and Mental Health
-
-- Correlation Between Enterprise Employment and Mental Health Diagnoses
-
-- Conclusion
-
-- Suggestions on the improvement of the analysis
-
-## Requirements
-
-To run the notebook locally, you will need the following libraries:
-
-- numpy
-- pandas
-- plotly
-- matplotlib
-- seaborn
-- sqlite3
-
-## Notebook
-(You can follow the link to open the notebook on [Google Colab](https://colab.research.google.com/github/pboric/Project-4/blob/main/Mental_Health_in_the_Tech_Industry_SQL_v2.ipynb)
-
-GitHub provides a static view of notebooks, which means it doesn’t support dynamic content like interactive graphs or plots generated by libraries such as Plotly or Matplotlib. This is why you might not see the output plots when viewing your notebook directly on GitHub.)
-
-You can install these libraries using pip:
-
-pip install numpy pandas plotly matplotlib seaborn
-
-1. Open the Jupyter Notebook:
-
-jupyter notebook Mental Health in the Tech Industry.ipynb
-
-2. Run the notebook cells to execute the analysis.
-
-## Conclusion
-
-This analysis provides valuable insights into mental health issues within the tech industry, highlighting the challenges faced by professionals and the need for greater awareness and support. Feel free to explore the notebook for more detailed findings and recommendations.
+MIT
